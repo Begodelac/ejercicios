@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        let palabraString = window.prompt("Escribe una palabra en minúscula");
-        let mitadpalabra = palabraString.substring (palabraString.length/2);
-        resultado = mitadpalabra.toLowerCase(palabraString.length/2);
-        frase = frase.toLowerCase();
-        console.log(resultado)
+        let string = "hola";
+        let mitad = string.substring(string.length / 2);
+        let mitadMayus = mitad.toUpperCase();
+        let palabraAMostrar = string.replace("la", mitadMayus);
+        console.log(palabraAMostrar);
     </script>
-</body>
+  </body>
 </html>
