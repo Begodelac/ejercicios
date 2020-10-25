@@ -1,19 +1,23 @@
 const express = require("express");
 const app = express();
 
-let persona = [
-    nombre= "Pepe",
-    nombre ="Manuel", 
-    nombre= "Diana",
-    nombre= "Juan",
-    nombre = "Ana"
-];
+let array = ["Pepe", "Manuel", "Diana", "Juan", "Ana"];
 
-app.get("/persona", function(req,res){
-    res.send(persona);
+app.get("/personas", function (req, res) {
+  let mensaje = "";
+  for (let i = 0; i < array.length; i++) {
+    mensaje += `<p>${array[i]}</p>`;
+  }
+  res.send(mensaje);
 });
-app.get("/persona/:nombre", function(req,res){
-    let name = req.params.nombre
-    res.send(name);
+app.get("/personas/:nombre", function (req, res) {
+  let nombre = req.params.nombre;
+  for (let i = 0; i < array.length; i++) {
+    if (nombre === array[i]) {
+      res.send(nombre);
+    }
+  }
+  res.send("error");
 });
+
 app.listen(3000);
